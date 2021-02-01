@@ -1,22 +1,42 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 
 function Favorites() {
 
-  const { store } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
     return (
       <>
        <h1 className='text-white ml-5'>the ones you can't get enough of.</h1>
-       <ul>
+       <div className="row">
       {
           !!store.globalName &&
           store.globalName.map((valor, i) => {
-            return <li className='text-white lix'  key={i}>{valor}</li>
+            return (
+              <>
+              <div className="col-md-3 py-3 mt-2" key={i}>
+                  <div className="card w-100 animate__animated animate__fadeIn">
+                    <img
+                      class="card-img-top"
+                      src={`https://www.nicepng.com/png/detail/26-261412_stormtrooper-png-stormtrooper.png`}
+                      alt="http://placehold.it/700x400"
+                    />
+                    <div className="card-body">
+                      <h4 className="card-title">
+                        <Link to="#">{valor}</Link>
+                      </h4>
+                    </div>
+                    <div className="card-footer">
+                    </div>
+                  </div>
+                  </div>
+              </>
+            );
           })
       }
-      </ul>
+      </div>
       </>
     );
   }

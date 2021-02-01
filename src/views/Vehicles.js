@@ -10,7 +10,7 @@ function Vehicles() {
     <>
       <div className="row mb-5">
         <h1 className="text-white position-absolute ml-5">
-          all of the characters from the saga, listed for you.
+          hop on any vehicle this series has to offer.
         </h1>
       </div>
       <div className="row">
