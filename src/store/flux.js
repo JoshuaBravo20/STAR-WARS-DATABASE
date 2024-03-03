@@ -8,8 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       globalName: []
     },
     actions: {
-      getCharacters: () => {
-        fetch("http://swapi.dev/api/people")
+      getCharacters: async () => {
+        await fetch("https://swapi.dev/api/people")
           .then((resp) => resp.json())
           .then((data) => {
             setStore({
@@ -17,17 +17,19 @@ const getState = ({ getStore, getActions, setStore }) => {
             });
           });
       },
-      getPlanets: () => {
-        fetch("http://swapi.dev/api/planets")
-          .then((resp) => resp.json())
+      getPlanets: async () => {
+        await fetch("https://swapi.dev/api/planets")
+          .then((resp) => {
+            console.log('resp: ', resp);
+          })
           .then((data) => {
             setStore({
               planets: data,
             });
           });
       },
-      getVehicles: () => {
-        fetch("http://swapi.dev/api/starships")
+      getVehicles: async () => {
+        await fetch("https://swapi.dev/api/starships")
           .then((resp) => resp.json())
           .then((data) => {
             setStore({
