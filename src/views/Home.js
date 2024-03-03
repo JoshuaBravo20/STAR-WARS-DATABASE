@@ -9,7 +9,7 @@ function Home() {
         className="intro-img animate__animated animate__rotateIn animate__delay-1s"
         src="https://pngimg.com/uploads/starwars/starwars_PNG6.png"
       />
-      <h3 className='text-white footer'>© Made by Joshua Bravo, 2021</h3>
+      <h3 className='text-white footer'>© Made by Joshua Bravo, 2024</h3>
     </>
   );
 }
